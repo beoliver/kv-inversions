@@ -20,8 +20,6 @@ export const intersect = <T>(...sets: Set<T>[]): Set<T> => {
   }
   if (sets.length === 1) {
     // make sure to return a new set
-    // this is not required if only called from `intersect`
-    // but if this is exported then we want to guarantee correctness
     return new Set(sets[0]);
   }
   const xs = [...sets].sort((a, b) => a.size - b.size);
